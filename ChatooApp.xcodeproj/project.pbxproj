@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2892031DD96D917361E0F6F2 /* Pods_ChatooApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6DEA083ACE0143AC3C5C02 /* Pods_ChatooApp.framework */; };
+		B326218422408AE000D51FF7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B326218322408AE000D51FF7 /* Message.swift */; };
+		B38743CF223FFA3D0019CB5F /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38743CE223FFA3D0019CB5F /* ChatRoomViewController.swift */; };
+		B38743D122402BB10019CB5F /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38743D022402BB10019CB5F /* ChatCell.swift */; };
+		B38743D622406ECE0019CB5F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38743D522406ECE0019CB5F /* Room.swift */; };
+		B38743D82240715D0019CB5F /* ChatScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38743D72240715D0019CB5F /* ChatScreenViewController.swift */; };
+		B38743DD224073E40019CB5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B38743DC224073E40019CB5F /* GoogleService-Info.plist */; };
+		B3B9CBAA223982F40090ED70 /* Formcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9CBA9223982F40090ED70 /* Formcell.swift */; };
 		B3FF04CE223884C500676877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF04CD223884C500676877 /* AppDelegate.swift */; };
 		B3FF04D0223884C500676877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FF04CF223884C500676877 /* ViewController.swift */; };
 		B3FF04D3223884C500676877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3FF04D1223884C500676877 /* Main.storyboard */; };
@@ -15,6 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		504E0A826F267467D63D884D /* Pods-ChatooApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatooApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatooApp/Pods-ChatooApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9F6DEA083ACE0143AC3C5C02 /* Pods_ChatooApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatooApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B326218322408AE000D51FF7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B38743CE223FFA3D0019CB5F /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		B38743D022402BB10019CB5F /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		B38743D522406ECE0019CB5F /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		B38743D72240715D0019CB5F /* ChatScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenViewController.swift; sourceTree = "<group>"; };
+		B38743DC224073E40019CB5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3B9CBA9223982F40090ED70 /* Formcell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formcell.swift; sourceTree = "<group>"; };
 		B3FF04CA223884C500676877 /* ChatooApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatooApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FF04CD223884C500676877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3FF04CF223884C500676877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +39,7 @@
 		B3FF04D4223884C500676877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3FF04D7223884C500676877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3FF04D9223884C500676877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F25F4C65AA4BF8F057D4B960 /* Pods-ChatooApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatooApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatooApp/Pods-ChatooApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2892031DD96D917361E0F6F2 /* Pods_ChatooApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D61B63E63EE642289B62428 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				504E0A826F267467D63D884D /* Pods-ChatooApp.debug.xcconfig */,
+				F25F4C65AA4BF8F057D4B960 /* Pods-ChatooApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6C1CD031878361892C7ECF3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F6DEA083ACE0143AC3C5C02 /* Pods_ChatooApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B38743D222406E4B0019CB5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B38743D522406ECE0019CB5F /* Room.swift */,
+				B326218322408AE000D51FF7 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B38743D9224071690019CB5F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B38743D72240715D0019CB5F /* ChatScreenViewController.swift */,
+				B38743CE223FFA3D0019CB5F /* ChatRoomViewController.swift */,
+				B3FF04CF223884C500676877 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B38743DA224071840019CB5F /* Resoruces */ = {
+			isa = PBXGroup;
+			children = (
+				B3FF04CD223884C500676877 /* AppDelegate.swift */,
+				B3FF04D6223884C500676877 /* LaunchScreen.storyboard */,
+				B3FF04D4223884C500676877 /* Assets.xcassets */,
+				B3FF04D1223884C500676877 /* Main.storyboard */,
+			);
+			path = Resoruces;
+			sourceTree = "<group>";
+		};
+		B3FA61C32239AC2D00C4B3BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3B9CBA9223982F40090ED70 /* Formcell.swift */,
+				B38743D022402BB10019CB5F /* ChatCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B3FF04C1223884C500676877 = {
 			isa = PBXGroup;
 			children = (
 				B3FF04CC223884C500676877 /* ChatooApp */,
 				B3FF04CB223884C500676877 /* Products */,
+				4D61B63E63EE642289B62428 /* Pods */,
+				6C1CD031878361892C7ECF3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +131,12 @@
 		B3FF04CC223884C500676877 /* ChatooApp */ = {
 			isa = PBXGroup;
 			children = (
-				B3FF04CD223884C500676877 /* AppDelegate.swift */,
-				B3FF04CF223884C500676877 /* ViewController.swift */,
-				B3FF04D1223884C500676877 /* Main.storyboard */,
-				B3FF04D4223884C500676877 /* Assets.xcassets */,
-				B3FF04D6223884C500676877 /* LaunchScreen.storyboard */,
 				B3FF04D9223884C500676877 /* Info.plist */,
+				B38743DC224073E40019CB5F /* GoogleService-Info.plist */,
+				B38743DA224071840019CB5F /* Resoruces */,
+				B38743D9224071690019CB5F /* Controller */,
+				B38743D222406E4B0019CB5F /* Model */,
+				B3FA61C32239AC2D00C4B3BC /* View */,
 			);
 			path = ChatooApp;
 			sourceTree = "<group>";
@@ -71,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3FF04DC223884C500676877 /* Build configuration list for PBXNativeTarget "ChatooApp" */;
 			buildPhases = (
+				21EFB583CC68CE30285837FD /* [CP] Check Pods Manifest.lock */,
 				B3FF04C6223884C500676877 /* Sources */,
 				B3FF04C7223884C500676877 /* Frameworks */,
 				B3FF04C8223884C500676877 /* Resources */,
+				63CA6440D65F829F215472EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3FF04D8223884C500676877 /* LaunchScreen.storyboard in Resources */,
+				B38743DD224073E40019CB5F /* GoogleService-Info.plist in Resources */,
 				B3FF04D5223884C500676877 /* Assets.xcassets in Resources */,
 				B3FF04D3223884C500676877 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +211,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21EFB583CC68CE30285837FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChatooApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63CA6440D65F829F215472EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChatooApp/Pods-ChatooApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChatooApp/Pods-ChatooApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B3FF04C6223884C500676877 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B9CBAA223982F40090ED70 /* Formcell.swift in Sources */,
 				B3FF04D0223884C500676877 /* ViewController.swift in Sources */,
+				B38743D82240715D0019CB5F /* ChatScreenViewController.swift in Sources */,
+				B38743D622406ECE0019CB5F /* Room.swift in Sources */,
 				B3FF04CE223884C500676877 /* AppDelegate.swift in Sources */,
+				B326218422408AE000D51FF7 /* Message.swift in Sources */,
+				B38743D122402BB10019CB5F /* ChatCell.swift in Sources */,
+				B38743CF223FFA3D0019CB5F /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +403,7 @@
 		};
 		B3FF04DD223884C500676877 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 504E0A826F267467D63D884D /* Pods-ChatooApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +419,7 @@
 		};
 		B3FF04DE223884C500676877 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F25F4C65AA4BF8F057D4B960 /* Pods-ChatooApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
