@@ -12,6 +12,7 @@ import Firebase
 class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource {
    
 
+    
     @IBOutlet weak var ChatTableview: UITableView!
     @IBOutlet weak var chatTextField: UITextField!
     var room : Room?
@@ -25,10 +26,9 @@ class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableVi
         ChatTableview.allowsSelection = false
         title = room?.roomName
         observeMessage()
-        // Do any additional setup after loading the view.
     }
-    
-    
+
+
     func getUsernameWithId(id :String , completion: @escaping (_ userName :String?)->()) {
         let databaseref = Database.database().reference()
         let user = databaseref.child("users").child(id)
@@ -119,7 +119,8 @@ class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableVi
     }
     
     return cell
-  }
     
+    }
+   
 
 }

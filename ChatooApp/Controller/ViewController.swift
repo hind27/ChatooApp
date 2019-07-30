@@ -11,16 +11,20 @@ import Firebase
 
 class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
  
-
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.completeLogin()
+        }
+    }
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-       
+    
     }
-
-  
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return 2
     }
@@ -53,6 +57,7 @@ class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
+    
     @objc func didPressSignIn(_ sender: UIButton){
         
         let indexPath = IndexPath(row: 0, section: 0)
@@ -68,11 +73,25 @@ class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionVi
             Auth.auth().signIn(withEmail: emailAddress, password: password) { (result, error) in
                 if(error == nil){
                     self.dismiss(animated: true, completion: nil)
+                    self.completeLogin()
                     print(result?.user)
                 } else {
-                    self.displayError(errorText: "Wrong username or password")
+                    // to show error through alert controller
+                    
+                    let alertController = UIAlertController(title: nil , message: error?.localizedDescription, preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
+        }
+    }
+    private func completeLogin() {
+        // Start Home Screen
+        
+        if let controller =  self.storyboard?.instantiateViewController(withIdentifier:"loginToHome") {
+            present(controller, animated: true, completion: nil)
         }
     }
     @objc func didPressSignUp(_ sender: UIButton){
@@ -84,6 +103,8 @@ class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionVi
         
         Auth.auth().createUser(withEmail: emailAddress, password: password) { (result, error) in
             if(error == nil){
+                //successfull login
+                print("Successful login")
                 guard let userId = result?.user.uid, let userName = cell.userNameTextField.text else {
                     return
                 }
@@ -92,6 +113,15 @@ class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionVi
                 let user = reference.child("users").child(userId)
                 let dataArray:[String: Any] = ["username": userName]
                 user.setValue(dataArray)
+                self.completeLogin()
+            }else{
+                // to show error through alert controller
+             
+                let alertController = UIAlertController(title: nil , message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
         
@@ -114,6 +144,5 @@ class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionVi
         alert.addAction(dismissButton)
         self.present(alert, animated: true, completion: nil)
     }
-    
-}
+    }
 
