@@ -10,8 +10,6 @@ import UIKit
 import Firebase
 
 class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource {
-   
-
     
     @IBOutlet weak var ChatTableview: UITableView!
     @IBOutlet weak var chatTextField: UITextField!
@@ -27,8 +25,7 @@ class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableVi
         title = room?.roomName
         observeMessage()
     }
-
-
+    
     func getUsernameWithId(id :String , completion: @escaping (_ userName :String?)->()) {
         let databaseref = Database.database().reference()
         let user = databaseref.child("users").child(id)
@@ -42,12 +39,12 @@ class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableVi
             }
         }
     }
-
+    
     func SendMessgae(text: String , completion: @escaping (_ isSucces:Bool)->()){
         guard let userId = Auth.auth().currentUser?.uid  else{
             return
         }
-         let databaseref = Database.database().reference()
+        let databaseref = Database.database().reference()
         getUsernameWithId(id: userId) { (userName) in
             if let userName = userName {
                 if let roomId = self.room?.roomId ,let userId = Auth.auth().currentUser?.uid{
@@ -55,27 +52,27 @@ class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableVi
                     let dataArray :[String: Any] = ["senderName": userName, "text": text ,"senderId":userId]
                     let room = databaseref.child("room").child(roomId)
                     room.child("message").childByAutoId().setValue(dataArray,
-                    withCompletionBlock: { (error , ref) in
-                        if error == nil {
-                            completion(true)
-                         
-                            //   print("Room Added to database Successduly")
-                        }else{
-                            print(error as Any)
-                            completion(false)
-                            
-                        }
+                                                                   withCompletionBlock: { (error , ref) in
+                                                                    if error == nil {
+                                                                        completion(true)
+                                                                        
+                                                                        //   print("Room Added to database Successduly")
+                                                                    }else{
+                                                                        print(error as Any)
+                                                                        completion(false)
+                                                                        
+                                                                    }
                     })
                     
                 }}
         }
         
-       
-    }
         
+    }
+    
     @IBAction func didPressSendButton(_ sender: Any) {
         guard let chatText = self.chatTextField.text , chatText.isEmpty == false else {
-        return
+            return
         }
         //chack message and return one single value
         SendMessgae(text: chatText) { (isSuccess) in
@@ -104,23 +101,24 @@ class ChatScreenViewController: UIViewController ,UITableViewDelegate ,UITableVi
     }
     
     
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return chatMessage.count
-   }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let message = self.chatMessage[indexPath.row]
-    let cell = ChatTableview.dequeueReusableCell(withIdentifier:"ChatCell") as! ChatCell
-     cell.SetMessageData(message: message)
-    if(message.userId == Auth.auth().currentUser?.uid){
-    cell.setBubbleType(type: .outcoming)
-    }else{
-        cell.setBubbleType(type: .incoming)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatMessage.count
     }
     
-    return cell
-    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = self.chatMessage[indexPath.row]
+        let cell = ChatTableview.dequeueReusableCell(withIdentifier:"ChatCell") as! ChatCell
+        cell.SetMessageData(message: message)
+        if(message.userId == Auth.auth().currentUser?.uid){
+            cell.setBubbleType(type: .outcoming)
+        }else{
+            cell.setBubbleType(type: .incoming)
+        }
+        
+        return cell
+        
     }
-   
-
+    
+    
 }
+

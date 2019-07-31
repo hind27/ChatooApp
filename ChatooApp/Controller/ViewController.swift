@@ -11,12 +11,12 @@ import Firebase
 
 class ViewController: UIViewController ,UICollectionViewDelegate ,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
  
-    override func viewDidAppear(_ animated: Bool){
-        super.viewDidAppear(animated)
-        if Auth.auth().currentUser != nil {
-            self.completeLogin()
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool){
+//        super.viewDidAppear(animated)
+//        if Auth.auth().currentUser != nil {
+//            self.completeLogin()
+//        }
+    //}
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()

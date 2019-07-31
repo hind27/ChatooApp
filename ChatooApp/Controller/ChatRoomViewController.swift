@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 
 class ChatRoomViewController: UIViewController , UITableViewDelegate , UITableViewDataSource{
-  
-
-   
+    
+    
+    
     @IBOutlet weak var newRoomTextfelid: UITextField!
     @IBOutlet weak var roomsTable: UITableView!
     
@@ -20,11 +20,11 @@ class ChatRoomViewController: UIViewController , UITableViewDelegate , UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       self.roomsTable.delegate = self
-       self.roomsTable.dataSource = self
         
-     observeRoom()
+        self.roomsTable.delegate = self
+        self.roomsTable.dataSource = self
+        
+        observeRoom()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,10 +33,10 @@ class ChatRoomViewController: UIViewController , UITableViewDelegate , UITableVi
             self.PresentLoginScreen()
         }
     }
-   
+    
     
     @IBAction func didPressLogout(_ sender: Any) {
-       try! Auth.auth().signOut()
+        try! Auth.auth().signOut()
         PresentLoginScreen()
     }
     
@@ -50,7 +50,7 @@ class ChatRoomViewController: UIViewController , UITableViewDelegate , UITableVi
         let dataArray:[String:Any] = ["roomName":roomName]
         room.setValue(dataArray){(error , ref ) in
             if(error == nil){
-             self.newRoomTextfelid.text = ""
+                self.newRoomTextfelid.text = ""
             }
             
         }
@@ -90,5 +90,7 @@ class ChatRoomViewController: UIViewController , UITableViewDelegate , UITableVi
         let chatRoom = self.storyboard?.instantiateViewController(withIdentifier: "ChatRoom") as! ChatScreenViewController
         chatRoom.room = selectedRoom
         self.navigationController?.pushViewController(chatRoom, animated: true)
+        
     }
 }
+
